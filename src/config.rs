@@ -59,10 +59,9 @@ lazy_static::lazy_static! {
 
     
     // pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new("".to_owned());
-    pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(match option_env!
-    ("RENDEZVOUS_SERVER") {
-        Some(key) if !key.isempty() => key,
-        _ => "",
+    pub static ref PROD_RENDEZVOUS_SERVER: RwLock<String> = RwLock::new(match option_env!("RENDEZVOUS_SERVER") {
+    Some(key) if !key.isempty() => key,
+    _ => "",
     }.to_owned());
 
 
